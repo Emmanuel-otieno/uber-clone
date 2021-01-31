@@ -11,7 +11,7 @@ class Profile(models.Model):
 
 
 
-class loca(models.Model):
+class Location(models.Model):
     """
     Model for a location
     """
