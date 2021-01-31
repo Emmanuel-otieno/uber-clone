@@ -1,5 +1,5 @@
-from .forms import *
-from .models import *
+from .forms import UpdateForm,RegisterForm,UserUpdateForm
+from .models import Location,Driver,Car
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
 from django.contrib.auth import views as auth_views
@@ -15,10 +15,10 @@ class LoginView(auth_views.LoginView):
 class LogoutView(LoginRequiredMixin, auth_views.LogoutView):
    '''logout view'''
 
-# def home(request):
-#     date = dt.date.today()
+def home(request):
+    
 
-    # return render(request, 'index.html',locals())
+    return render(request, 'index.html',locals())
 
 
 def profile_info(request):
