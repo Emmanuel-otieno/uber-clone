@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'driver',
     'bootstrap4',
     'tinymce',
-    'location_field',
+    'location_field.apps.DefaultConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
