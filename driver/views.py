@@ -5,7 +5,7 @@ from django.http  import HttpResponse,Http404
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+import datetime as dt
 
 # Create your views here.
 class LoginView(auth_views.LoginView):
@@ -16,6 +16,7 @@ class LogoutView(LoginRequiredMixin, auth_views.LogoutView):
    '''logout view'''
 
 def home(request):
+    date = dt.date.today()
     
 
     return render(request, 'index.html',locals())
