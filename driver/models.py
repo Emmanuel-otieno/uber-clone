@@ -12,8 +12,8 @@ class Driver(models.Model):
     name = models.OneToOneField(User,on_delete=models.CASCADE)
     bio =  HTMLField(blank=True)
     avatar = CloudinaryField('image', blank=True, null=True)
-    vehicle = models.ForeignKey('app.Car', on_delete=models.CASCADE)
-    pickup_location = models.ForeignKey('app.location', on_delete=models.CASCADE)
+    vehicle = models.ForeignKey('driver.Car', on_delete=models.CASCADE)
+    pickup_location = models.ForeignKey('driver.location', on_delete=models.CASCADE)
     contact_info = models.CharField(max_length=50)
 
     
@@ -33,8 +33,8 @@ class Location (models.Model):
 
     longitude = models.CharField(max_length=10)
     latitude = models.CharField(max_length=10)
-    location_name = models.ForeignKey('app.Driver', on_delete=models.CASCADE)
-    category = models.ForeignKey('app.Category', on_delete=models.CASCADE)
+    location_name = models.ForeignKey('driver.Driver', on_delete=models.CASCADE)
+    category = models.ForeignKey('driver.Category', on_delete=models.CASCADE)
 
     
     def __str__(self):
