@@ -12,7 +12,6 @@ class Driver(models.Model):
     name = models.OneToOneField(User,on_delete=models.CASCADE)
     bio =  HTMLField(blank=True)
     avatar = CloudinaryField('image', blank=True, null=True)
-    vehicle = models.ForeignKey('app.Car', on_delete=models.CASCADE)
     pickup_location = models.ForeignKey('app.location', on_delete=models.CASCADE)
     contact_info = models.CharField(max_length=50)
 
@@ -44,38 +43,4 @@ class Location (models.Model):
         self.save()
 
     def delete_location(self):
-        self.delete()
-    
-
-
-class Car(models.Model):
-
-    car_brand = HTMLField(blank=True)
-    number_plate = HTMLField(blank=True)
-    seat_number = HTMLField(blank=True)
-
-
-    def __str__(self):
-        return self.car_brand
-
-    def save_car(self):
-        self.save()
-
-    def delete_car(self):
-        self.delete()
-    
-
-class Category(models.Model):
-
-    pickup_location = HTMLField(blank=True)
-    arrival_destination = HTMLField(blank=True)
-
-
-    def __str__(self):
-        return self.pickup_location
-
-    def save_category(self):
-        self.save()
-
-    def delete_category(self):
-        self.delete()
+        self.delete()   
