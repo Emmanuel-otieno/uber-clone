@@ -21,6 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('driver.urls')),
     path('',include('user.urls')),
-    path(r'accounts/', include('registration.backends.simple.urls')),
-    path(r'^logout/$', views.LogoutView.as_view(next_page='/')),
+    path('tinymce/', include('tinymce.urls')),
+    path('accounts/', include('django_registration.backends.one_step.urls')), 
+    path('accounts/login/', views.LoginView.as_view(template_name='registration/login.html')),
+    path('accounts/logout/', views.LogoutView.as_view(next_page='/')),
 ]
