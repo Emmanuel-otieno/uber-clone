@@ -1,4 +1,4 @@
-from .models import  Passenger
+#from .models import  Passenger
 from driver.forms import UpdateForm,RegisterForm,UserUpdateForm
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
