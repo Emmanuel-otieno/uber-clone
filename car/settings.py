@@ -9,8 +9,15 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+from decouple import config
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,6 +40,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'user',
     'driver',
+    'bootstrap4',
+    'tinymce',
+    'location_field.apps.DefaultConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,11 +87,19 @@ WSGI_APPLICATION = 'car.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'car',
+        'USER': 'moringa',
+        'PASSWORD':'1234',
+                                
     }
 }
+cloudinary.config(   
+  cloud_name = 'dna4zvvgn',
+  api_key = '189771367633795',
+  api_secret = '0ZHoI9TJhb2rK_R1dT0q8FmCeWo', 
 
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -121,3 +139,11 @@ GOOGLE_MAP_API = "AIzaSyCiH9u8HHlCkIU0SmZmkQguno1kt2AcIVA"
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = 'index'
