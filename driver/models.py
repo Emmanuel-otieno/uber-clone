@@ -12,7 +12,7 @@ class Driver(models.Model):
     name = models.OneToOneField(User,on_delete=models.CASCADE)
     bio =  HTMLField(blank=True)
     avatar = CloudinaryField('image', blank=True, null=True)
-    vehicle = models.ForeignKey('driver.Car', on_delete=models.CASCADE)
+   # vehicle = models.ForeignKey('driver.Car', on_delete=models.CASCADE)
     pickup_location = models.ForeignKey('driver.location', on_delete=models.CASCADE)
     contact_info = models.CharField(max_length=50)
 

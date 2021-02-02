@@ -20,4 +20,4 @@ class UserUpdateForm(forms.ModelForm):
 class UpdateForm(forms.ModelForm):
     class Meta:
         model = Driver
-        fields = ['name', 'bio', 'avatar','contact_info','vehicle'] 
+        fields = ('name','bio','avatar','contact_info','vehicle')
