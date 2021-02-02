@@ -11,6 +11,13 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+from decouple import config
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -87,7 +94,12 @@ DATABASES = {
                                 
     }
 }
+cloudinary.config(   
+  cloud_name = 'dna4zvvgn',
+  api_key = '189771367633795',
+  api_secret = '0ZHoI9TJhb2rK_R1dT0q8FmCeWo', 
 
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
