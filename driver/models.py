@@ -1,5 +1,5 @@
 from cloudinary.models import CloudinaryField
-from django.contrib.auth.models import User 
+from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 from django.utils import timezone
 from django.db import models
@@ -34,9 +34,6 @@ class Location (models.Model):
     longitude = models.CharField(max_length=10)
     latitude = models.CharField(max_length=10)
     category = models.ForeignKey('driver.Category', on_delete=models.CASCADE)
-
-    
-   
 
     def save_location(self):
         self.save()
