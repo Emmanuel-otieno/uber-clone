@@ -35,9 +35,6 @@ class Location (models.Model):
     latitude = models.CharField(max_length=10)
     category = models.ForeignKey('driver.Category', on_delete=models.CASCADE)
 
-    
-   
-
     def save_location(self):
         self.save()
 
