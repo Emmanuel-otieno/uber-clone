@@ -1,5 +1,5 @@
 from cloudinary.models import CloudinaryField
-from django.contrib.auth.models import User 
+# from django.contrib.auth.models import User 
 from tinymce.models import HTMLField
 from django.utils import timezone
 from driver.models import Location
