@@ -1,0 +1,1 @@
+web: gunicorn car name.wsgi --log-file -
