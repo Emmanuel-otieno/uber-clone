@@ -1,1 +1,1 @@
-web: gunicorn car name.wsgi --log-file -
+web: gunicorn car.wsgi --log-file -
